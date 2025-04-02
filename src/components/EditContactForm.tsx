@@ -9,7 +9,6 @@ import { EditContactSchema } from '@/lib/validationSchemas';
 import { editContact } from '@/lib/dbActions';
 
 const onSubmit = async (data: Contact) => {
-  // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
   await editContact(data);
   swal('Success', 'Your contact has been updated', 'success', {
     timer: 2000,
@@ -25,7 +24,6 @@ const EditContactForm = ({ contact }: { contact: Contact }) => {
   } = useForm<Contact>({
     resolver: yupResolver(EditContactSchema),
   });
-  // console.log(stuff);
 
   return (
     <Container className="py-3">

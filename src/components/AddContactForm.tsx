@@ -17,7 +17,6 @@ const onSubmit = async (data: {
   image: string,
   description: string,
   owner: string, }) => {
-  // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
   await addContact(data);
   swal('Success', 'Your contact has been added', 'success', {
     timer: 2000,
@@ -26,7 +25,6 @@ const onSubmit = async (data: {
 
 const AddContactForm: React.FC = () => {
   const { data: session, status } = useSession();
-  // console.log('AddStuffForm', status, session);
   const currentUser = session?.user?.email || '';
   const {
     register,
